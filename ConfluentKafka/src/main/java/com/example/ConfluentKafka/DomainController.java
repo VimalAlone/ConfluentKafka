@@ -1,0 +1,25 @@
+package com.example.ConfluentKafka;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+@RequestMapping("/domain")
+public class DomainController {
+
+
+  private DomainCrawlerService domainCrawlerService;
+
+  public DomainController(DomainCrawlerService domainCrawlerService) {
+    this.domainCrawlerService = domainCrawlerService;
+  }
+
+  @GetMapping("/lookup/{name}")
+  public String lookup(@PathVariable("name") final String name) {
+    domainCrawlerService.crawl(name);
+    return "Domain crawler has scrapped your data";
+  }
+}

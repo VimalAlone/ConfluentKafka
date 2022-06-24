@@ -1,0 +1,5 @@
+com\example\ConfluentKafka\ConfluentKafkaApplication.class
+com\example\ConfluentKafka\DomainController.class
+com\example\ConfluentKafka\Domain.class
+com\example\ConfluentKafka\DomainList.class
+com\example\ConfluentKafka\DomainCrawlerService.class
